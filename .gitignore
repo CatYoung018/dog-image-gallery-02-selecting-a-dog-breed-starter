@@ -2,4 +2,8 @@ venv
 .DS_Store
 Thumbs.db
 __pycache__/
+<<<<<<< HEAD
 .vscode/
+=======
+.vscode/
+>>>>>>> b29a8c5b21d36a943f5b8c95999247eb20dc0797
