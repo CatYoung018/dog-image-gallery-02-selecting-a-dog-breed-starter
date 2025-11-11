@@ -1,67 +1,103 @@
-# Install Python
+# 🐶 Dog Image Gallery
 
-Check to see if you already have Python installed on your system by running:
+<img width="1785" height="991" alt="Screenshot 2025-11-11 at 10 00 05 AM" src="https://github.com/user-attachments/assets/98af0089-7b23-43b8-a542-1e80f3891324" />
 
-On a Mac:
-`python3 --version`
+---
 
-On Windows:
-`python --version`
+## Description
 
-If you already have Python installed, check to be sure it’s Python 3.8 or up. (For example, 3.11 is great!) We suggest waiting on 3.12 to give any dependencies time to be updated.
+This full-stack web application, built with **Flask**, allows users to browse dog images by breed, utilizing the **Dog CEO API**. It serves as a portfolio piece demonstrating proficiency in front-end design (HTML/CSS), server-side routing, API integration, and dynamic web content rendering.
 
-If you are using a Windows machine, it is possible that you don’t have Python installed. You’ll need to pause here for a moment and proceed to install it. See this document for more [information](https://docs.google.com/document/d/14diNu_g6uhouBscRt8zIezolANTRQA6HobKRP4Lgu5Q/copy).
+---
 
-# Setting up to run scripts to work with Python.
+## 🛠 Technologies Used
 
-The script will be run in a virtual environment. Start by creating a virtual environment. Navigate to to the project folder in the command line and run:
+* **Backend Framework:** Python / Flask
+* **Frontend:** HTML5, Jinja Templating, CSS3
+* **External API:** Dog CEO API (a free dog image API)
+* **Libraries:** `requests` (for making HTTP API calls)
 
-On a Mac:
-`python3 -m venv venv`
+---
 
-On Windows:
-`python -m venv venv`
+## ✨ Key Features
 
-<br>
-After creating the virtual environment, you need to activate it:
+This application showcases the following technical skills:
 
-On a Mac:
-`source venv/bin/activate`
+* **API Integration:** Successfully makes **GET** requests to the external Dog CEO API to fetch images based on user selection or to retrieve a single random image.
+* **Dynamic Routing & Templating:** Uses Flask routes (`@app.route`) to handle both `GET` (initial load) and `POST` (form submission) requests. Content is dynamically rendered using **Jinja templates**.
+* **Form Handling & Validation (Backend):** Processes user input from a form (breed and number selection) and includes basic **server-side validation** to ensure both fields are selected before making an API call.
+* **Structured Data Handling:** Manages and prettifies breed names using a dedicated Python dictionary (`dog_breeds.py`) for cleaner display on the frontend.
+* **User Interface:** Features a responsive design with custom typography and clean CSS, utilizing a dropdown menu for breed selection.
 
-On Windows:
-`source venv/Scripts/activate`
+---
 
-<br>
-Once the virtual environment is activated, the beginning of your terminal prompt should display (venv).
+## 🚀 Installation & Setup
 
-<br>
-Install the modules by running (in both a Mac and Windows):
+Follow these steps to set up and run the project locally.
 
-`pip install flask flask-sqlalchemy`
+### Prerequisites
 
-You'll see a venv folder has been added to the directory with all of the installed dependencies.
+You need **Python 3** installed on your machine.
 
-<br>
+### 1. Clone the Repository
 
-To run your code, in the command line run:
+```bash
+git clone [https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git)
+cd YOUR_REPO_NAME
+````
 
-Without a debugger:
-`flask run`
+*(Replace `YOUR_USERNAME` and `YOUR_REPO_NAME` with your actual details.)*
 
-With a debugger:
-`flask run --debug`
+### 2\. Install Dependencies
 
-<br>
+It is recommended to use a virtual environment.
 
-The app will run at: http://127.0.0.1:5000/
+```bash
+# Create a virtual environment
+python3 -m venv venv
+# Activate the environment
+source venv/bin/activate  # On macOS/Linux
+venv\Scripts\activate     # On Windows
+# Install required libraries
+pip install Flask requests
+```
 
-<br>
+### 3\. Run the Application
 
-To stop the run, click control + C. When making changes to your Python, HTML, or JavaScript code (and not using debugger) you'll need to stop the run after each change. After restarting the server, hard refresh the page.
+Execute the main application file:
 
-<br>
-When finished, quit the run by clicking control + C and close the virtual environment by running:
+```bash
+python app.py
+```
 
-`deactivate`
+The application will now be running on your local server. Open your web browser and navigate to: **`http://127.0.0.1:5000/`**
 
-<br>
+-----
+
+## 💡 Usage
+
+The application presents two main ways to view dog images:
+
+1.  **Select by Breed:** Choose a specific breed from the dropdown menu and select the desired number of images to fetch.
+
+![dog_smallimage](https://github.com/user-attachments/assets/8343bd82-86c7-48fd-97f9-98d71da99327)
+
+
+2.  **Random Image:** Click the "Random Image" button to instantly retrieve a single, random image from the entire collection.
+
+![dog_randomimage](https://github.com/user-attachments/assets/2894b02a-04f0-4299-89e0-735141426674)
+
+-----
+
+## 🚧 Future Enhancements
+
+  * Implement client-side JavaScript validation for a better user experience.
+  * Add image caching to improve load times for frequently requested breeds.
+  * Allow users to filter images by sub-breed (e.g., different types of poodles).
+  * Add a testing suite (e.g., using `unittest` or `pytest`) for backend routes.
+
+-----
+
+## 📜 API Credit
+
+Data and images provided by the **Dog CEO API**.
